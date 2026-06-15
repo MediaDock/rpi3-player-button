@@ -1,0 +1,13 @@
+[Unit]
+Description=Button Video Player
+After=local-fs.target sound.target
+
+[Service]
+User=eva
+WorkingDirectory=/home/eva/rpi3-player-button
+ExecStart=/home/eva/rpi3-player-button/venv/bin/python3 /home/eva/rpi3-player-button/main.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
